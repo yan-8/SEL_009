@@ -1,5 +1,6 @@
-package com.automationpractice;
+package com.automationpractice.tests;
 
+import com.automationpractice.manager.ApplicationManager;
 import org.junit.After;
 import org.junit.Before;
 
