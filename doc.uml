@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="0.0">com.automationpractice.manager.LoginHelper</node>
+    <node x="209.0" y="0.0">com.automationpractice.manager.SignUpHelper</node>
+    <node x="78.50000000000003" y="145.0">com.automationpractice.manager.ApplicationManager</node>
+    <node x="-303.6363636363635" y="168.54545454545456">com.automationpractice.tests.BaseTest</node>
+    <node x="158.00000000000003" y="435.0">com.automationpractice.tests.Tests</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.automationpractice.tests.BaseTest" target="com.automationpractice.manager.ApplicationManager">
+      <point x="84.5" y="-25.5" />
+      <point x="283.5" y="309.0" />
+      <point x="259.25" y="309.0" />
+      <point x="60.25" y="69.5" />
+    </edge>
+    <edge source="com.automationpractice.manager.ApplicationManager" target="com.automationpractice.manager.LoginHelper">
+      <point x="-60.25" y="-69.5" />
+      <point x="138.75000000000003" y="115.0" />
+      <point x="94.5" y="115.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="com.automationpractice.tests.Tests" target="com.automationpractice.tests.BaseTest">
+      <point x="20.5" y="-14.5" />
+      <point x="219.50000000000003" y="410.0" />
+      <point x="283.5" y="410.0" />
+      <point x="84.5" y="25.5" />
+    </edge>
+    <edge source="com.automationpractice.manager.ApplicationManager" target="com.automationpractice.manager.SignUpHelper">
+      <point x="60.25" y="-69.5" />
+      <point x="259.25" y="115.0" />
+      <point x="303.5" y="115.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.1000000000000003" x="177.0" y="131.72727272727263" />
+  <SelectedNodes>
+    <node>com.automationpractice.tests.BaseTest</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

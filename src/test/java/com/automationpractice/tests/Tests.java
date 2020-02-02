@@ -4,7 +4,10 @@ import org.junit.Test;
 
 public class Tests extends BaseTest {
     @Test
-    public void test1() {
-
+    public void registrationOfNewUser() throws InterruptedException {
+        automationPracticeApp.goToLoginPage();
+        automationPracticeApp.getLoginHelper().fillGeneratedEmailForCreateNewUser();
+        automationPracticeApp.getLoginHelper().clickOnCreateAnAccountButton();
+        automationPracticeApp.getSignUpHelper().fillUserDataToSignUp();
     }
 }

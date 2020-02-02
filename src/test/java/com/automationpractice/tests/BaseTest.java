@@ -5,15 +5,15 @@ import org.junit.After;
 import org.junit.Before;
 
 public class BaseTest {
-    private final ApplicationManager applicationManager = new ApplicationManager();
+    protected final ApplicationManager automationPracticeApp = new ApplicationManager();
 
     @Before
     public void start() {
-        applicationManager.init();
+        automationPracticeApp.initBrowser();
     }
 
     @After
-    public void end() {
-        applicationManager.stop();
+    public void stop() {
+        automationPracticeApp.tearDownBrowser();
     }
 }
