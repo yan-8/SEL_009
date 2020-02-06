@@ -6,7 +6,7 @@ import org.junit.Before;
 import sun.plugin2.util.BrowserType;
 
 public class BaseTest {
-    protected final ApplicationManager automationPracticeApp = new ApplicationManager(BrowserType.MOZILLA);
+    protected final ApplicationManager automationPracticeApp = new ApplicationManager(BrowserType.DEFAULT);
 
     @Before
     public void start() {
