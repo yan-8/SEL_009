@@ -1,6 +1,7 @@
 package com.automationpractice.manager;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -15,6 +16,15 @@ public class SignUpHelper extends BaseHelper {
     }
 
     public void fillUserDataToSignUp() {
-        System.out.println("FFFFF");
+        String firstName = faker.name().firstName();
+        String lastName = faker.name().lastName();
+        String password = faker.lorem().characters(8, true);
+
+        click(By.xpath("//*[@id = 'uniform-id_gender2']"));
+        type(By.xpath("//*[@id = 'customer_firstname']"), firstName);
+        type(By.xpath("//*[@id = 'customer_lastname']"), lastName);
+        type(By.xpath("//*[@id = 'passwd']"), password);
+
+//        selectFromDropdown(By.xpath("//*[@id = 'days']"));
     }
 }
