@@ -15,7 +15,17 @@ public class HeaderHelper extends BaseHelper {
         if (isElementPresent(By.xpath("//div[@id = 'center_column']//h1")) && driver.findElement(By.xpath("//div[@id = 'center_column']//h1")).getText().equals("AUTHENTICATION")) {
             return;
         }
-        driver.findElement(By.xpath("//*[@class = 'login']")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id = 'center_column']")));
+
+        driver.findElement(By.xpath("//a[@class = 'login']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id = 'center_column']//h1[contains(text(), 'Authentication')]")));
+    }
+
+    public void goToContactUsPage() {
+        if (isElementPresent(By.xpath("//div[@id = 'center_column']//h1")) && driver.findElement(By.xpath("//div[@id = 'center_column']//h1")).getText().equals("CUSTOMER SERVICE - CONTACT US")) {
+            return;
+        }
+
+        driver.findElement(By.xpath("//div[@id = 'contact-link']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id = 'center_column']//h1[contains(text(), 'Customer service - Contact us')]")));
     }
 }
