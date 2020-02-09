@@ -25,6 +25,9 @@ public class SignUpHelper extends BaseHelper {
         type(By.xpath("//*[@id = 'customer_lastname']"), lastName);
         type(By.xpath("//*[@id = 'passwd']"), password);
 
-        selectFromDropdown(By.xpath("//select[@name = 'days']"), "5");
+        selectFromDropdownByValue(By.xpath("//select[@name = 'days']"), "1");
+        selectFromDropdownByValue(By.xpath("//select[@name = 'months']"), "1");
+        selectFromDropdownByValue(By.xpath("//select[@name = 'years']"), "1970");
+
     }
 }

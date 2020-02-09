@@ -31,7 +31,7 @@ public class BaseHelper {
         }
     }
 
-    protected void selectFromDropdown(By locator, String text) {
+    protected void selectFromDropdownByValue(By locator, String text) {
         if (isElementPresent(locator)) {
             new Select(driver.findElement(locator)).selectByValue(text);
         }
