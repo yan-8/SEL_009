@@ -7,13 +7,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginHelper extends BaseHelper {
-    private WebDriverWait wait;
-    private Faker faker;
+//    private WebDriverWait wait;
+//    private Faker faker;
 
     public LoginHelper(WebDriver driver, WebDriverWait wait, Faker faker) {
-        super(driver);
-        this.wait = wait;
-        this.faker = faker;
+        super(driver, wait, faker);
+//        this.wait = wait;
+//        this.faker = faker;
     }
 
     public void fillGeneratedEmailForCreateNewUser() {

@@ -58,6 +58,7 @@ public class ApplicationManager {
         }
 
         wait = new WebDriverWait(driver, 15); // явное
+        driver.manage().window().maximize();
         faker = new Faker();
 
         driver.get("http://automationpractice.com");

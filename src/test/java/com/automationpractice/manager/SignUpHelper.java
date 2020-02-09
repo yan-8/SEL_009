@@ -6,13 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignUpHelper extends BaseHelper {
-    private WebDriverWait wait;
-    private Faker faker;
+//    private WebDriverWait wait;
+//    private Faker faker;
 
     public SignUpHelper(WebDriver driver, WebDriverWait wait, Faker faker) {
-        super(driver);
-        this.wait = wait;
-        this.faker = faker;
+        super(driver, wait, faker);
+//        this.wait = wait;
+//        this.faker = faker;
     }
 
     public void fillUserDataToSignUp() {
@@ -25,6 +25,6 @@ public class SignUpHelper extends BaseHelper {
         type(By.xpath("//*[@id = 'customer_lastname']"), lastName);
         type(By.xpath("//*[@id = 'passwd']"), password);
 
-//        selectFromDropdown(By.xpath("//*[@id = 'days']"));
+        selectFromDropdown(By.xpath("//select[@name = 'days']"), "5");
     }
 }
