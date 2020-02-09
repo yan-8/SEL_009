@@ -37,7 +37,7 @@ public class BaseHelper {
         }
     }
 
-    private boolean isElementPresent(By locator) {
+    protected boolean isElementPresent(By locator) {
         try {
             driver.findElement(locator);
             return true;

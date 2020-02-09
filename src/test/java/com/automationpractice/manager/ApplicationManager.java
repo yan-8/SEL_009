@@ -1,17 +1,13 @@
 package com.automationpractice.manager;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import sun.plugin2.util.BrowserType;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -21,6 +17,7 @@ public class ApplicationManager {
     private Faker faker;
     private LoginHelper loginHelper;
     private SignUpHelper signUpHelper;
+    private HeaderHelper headerHelper;
     private int browser;
 
     public ApplicationManager(int browser) {
@@ -33,6 +30,10 @@ public class ApplicationManager {
 
     public SignUpHelper getSignUpHelper() {
         return signUpHelper;
+    }
+
+    public HeaderHelper getHeaderHelper() {
+        return headerHelper;
     }
 
     public void initBrowser() throws MalformedURLException {
@@ -65,14 +66,10 @@ public class ApplicationManager {
 
         loginHelper = new LoginHelper(driver, wait, faker);
         signUpHelper = new SignUpHelper(driver, wait, faker);
+        headerHelper = new HeaderHelper(driver, wait, faker);
     }
 
     public void tearDownBrowser() {
         driver.quit();
-    }
-
-    public void goToLoginPage() {
-        driver.findElement(By.xpath("//*[@class = 'login']")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id = 'center_column']")));
     }
 }
