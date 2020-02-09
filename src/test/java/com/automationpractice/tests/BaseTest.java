@@ -7,15 +7,15 @@ import sun.plugin2.util.BrowserType;
 import java.net.MalformedURLException;
 
 public class BaseTest {
-    protected final ApplicationManager automationPractice = new ApplicationManager(BrowserType.DEFAULT);
+    protected final ApplicationManager app = new ApplicationManager(BrowserType.DEFAULT);
 
     @Before
     public void start() throws MalformedURLException {
-        automationPractice.initBrowser();
+        app.initBrowser();
     }
 
     @After
     public void stop() {
-        automationPractice.tearDownBrowser();
+        app.tearDownBrowser();
     }
 }

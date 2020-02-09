@@ -5,11 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SignUpHelper extends BaseHelper {
+public class SignInHelper extends BaseHelper {
 //    private WebDriverWait wait;
 //    private Faker faker;
 
-    public SignUpHelper(WebDriver driver, WebDriverWait wait, Faker faker) {
+    public SignInHelper(WebDriver driver, WebDriverWait wait, Faker faker) {
         super(driver, wait, faker);
 //        this.wait = wait;
 //        this.faker = faker;
@@ -28,6 +28,9 @@ public class SignUpHelper extends BaseHelper {
         selectFromDropdownByValue(By.xpath("//select[@name = 'days']"), "1");
         selectFromDropdownByValue(By.xpath("//select[@name = 'months']"), "1");
         selectFromDropdownByValue(By.xpath("//select[@name = 'years']"), "1970");
+
+
+
 
     }
 }

@@ -16,7 +16,7 @@ public class ApplicationManager {
     private WebDriverWait wait;
     private Faker faker;
     private LoginHelper loginHelper;
-    private SignUpHelper signUpHelper;
+    private SignInHelper signInHelper;
     private HeaderHelper headerHelper;
     private int browser;
 
@@ -28,8 +28,8 @@ public class ApplicationManager {
         return loginHelper;
     }
 
-    public SignUpHelper getSignUpHelper() {
-        return signUpHelper;
+    public SignInHelper getSignInHelper() {
+        return signInHelper;
     }
 
     public HeaderHelper getHeaderHelper() {
@@ -65,7 +65,7 @@ public class ApplicationManager {
         driver.get("http://automationpractice.com");
 
         loginHelper = new LoginHelper(driver, wait, faker);
-        signUpHelper = new SignUpHelper(driver, wait, faker);
+        signInHelper = new SignInHelper(driver, wait, faker);
         headerHelper = new HeaderHelper(driver, wait, faker);
     }
 

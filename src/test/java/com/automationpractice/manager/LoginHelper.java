@@ -23,6 +23,6 @@ public class LoginHelper extends BaseHelper {
 
     public void clickOnCreateAnAccountButtonWithWait() {
         click(By.xpath("//*[@id = 'SubmitCreate']"));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id = 'account-creation_form']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id = 'center_column']//h1[contains(text(), 'Create an account')]")));
     }
 }
