@@ -5,10 +5,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import sun.plugin2.util.BrowserType;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ApplicationManager {
     private WebDriver driver;
@@ -30,10 +35,19 @@ public class ApplicationManager {
         return signUpHelper;
     }
 
-    public void initBrowser() {
+    public void initBrowser() throws MalformedURLException {
         if (browser == BrowserType.DEFAULT) {
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/mac/chrome/chromedriver");
-            driver = new ChromeDriver();
+
+            // temp remote driver init
+            URL remoteServerURL = new URL("http://192.168.55.104:4444/wd/hub");
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setBrowserName("chrome");
+            driver = new RemoteWebDriver(remoteServerURL, capabilities); // запуск с ChromeOptions
+            // temp remote driver init
+
+            // local chrome driver initial
+//            System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/mac/chrome/chromedriver");
+//            driver = new ChromeDriver();
         } else if (browser == BrowserType.MOZILLA) {
             System.setProperty("webdriver.gecko.driver", "src/main/resources/drivers/mac/gecko/geckodriver");
             driver = new FirefoxDriver();
