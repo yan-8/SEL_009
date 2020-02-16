@@ -1,6 +1,5 @@
 package com.automationpractice.manager;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -11,12 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BaseHelper {
     protected WebDriver driver;
     protected WebDriverWait wait;
-//    protected Faker faker;
 
     public BaseHelper(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
-//        this.faker = faker;
     }
 
     protected void type(By locator, String text) {

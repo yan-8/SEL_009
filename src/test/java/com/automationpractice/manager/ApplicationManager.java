@@ -1,6 +1,5 @@
 package com.automationpractice.manager;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -14,7 +13,6 @@ import java.net.URL;
 public class ApplicationManager {
     private WebDriver driver;
     private WebDriverWait wait;
-//    private Faker faker;
     private LoginHelper loginHelper;
     private SignInHelper signInHelper;
     private HeaderHelper headerHelper;
@@ -60,7 +58,6 @@ public class ApplicationManager {
 
         wait = new WebDriverWait(driver, 15); // явное
         driver.manage().window().maximize();
-//        faker = new Faker();
 
         driver.get("http://automationpractice.com");
 

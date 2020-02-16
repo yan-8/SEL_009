@@ -1,25 +1,15 @@
 package com.automationpractice.manager;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignInHelper extends BaseHelper {
-//    private WebDriverWait wait;
-//    private Faker faker;
-
     public SignInHelper(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
-//        this.wait = wait;
-//        this.faker = faker;
     }
 
     public void fillUserDataToSignUp(String firstName, String lastName, String password) {
-//        String firstName = faker.name().firstName();
-//        String lastName = faker.name().lastName();
-//        String password = faker.lorem().characters(8, true);
-
         click(By.xpath("//*[@id = 'uniform-id_gender2']"));
         type(By.xpath("//*[@id = 'customer_firstname']"), firstName);
         type(By.xpath("//*[@id = 'customer_lastname']"), lastName);

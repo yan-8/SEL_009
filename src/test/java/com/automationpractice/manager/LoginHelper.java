@@ -1,19 +1,13 @@
 package com.automationpractice.manager;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginHelper extends BaseHelper {
-//    private WebDriverWait wait;
-//    private Faker faker;
-
     public LoginHelper(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
-//        this.wait = wait;
-//        this.faker = faker;
     }
 
     public void fillGeneratedEmailForCreateNewUser(String email) {

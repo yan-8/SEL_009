@@ -26,4 +26,3 @@ public class Tests extends BaseTest {
 //        app.getMyAccountHelper().loggingOutOfUser();
     }
 }
-// посмотрел - 39 Коллекции Наборы элементов
