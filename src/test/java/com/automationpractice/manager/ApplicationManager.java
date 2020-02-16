@@ -15,6 +15,7 @@ public class ApplicationManager {
     private WebDriverWait wait;
     private LoginHelper loginHelper;
     private SignInHelper signInHelper;
+    private ContactUsHelper contactUsHelper;
     private HeaderHelper headerHelper;
     private int browser;
 
@@ -28,6 +29,10 @@ public class ApplicationManager {
 
     public SignInHelper getSignInHelper() {
         return signInHelper;
+    }
+
+    public ContactUsHelper getContactUsHelper() {
+        return contactUsHelper;
     }
 
     public HeaderHelper getHeaderHelper() {
@@ -63,6 +68,7 @@ public class ApplicationManager {
 
         loginHelper = new LoginHelper(driver, wait);
         signInHelper = new SignInHelper(driver, wait);
+        contactUsHelper = new ContactUsHelper(driver, wait);
         headerHelper = new HeaderHelper(driver, wait);
     }
 

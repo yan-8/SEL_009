@@ -19,4 +19,11 @@ public class SignInHelper extends BaseHelper {
         selectFromDropdownByValue(By.xpath("//select[@name = 'months']"), "1");
         selectFromDropdownByValue(By.xpath("//select[@name = 'years']"), "1970");
     }
+
+    public void loggingInAsUser(String login, String password) {
+        type(By.xpath("//*[@id = 'email']"), login);
+        type(By.xpath("//*[@id = 'passwd']"), password);
+        clickAndWaitForElementVisible(By.xpath("//*[@id = 'SubmitLogin']"), By.xpath("//div[@id = 'center_column']//h1"));
+    }
+
 }

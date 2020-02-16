@@ -19,6 +19,7 @@ public class BaseHelper {
     protected void type(By locator, String text) {
         if (text != null) {
             click(locator);
+
             String currentText = driver.findElement(locator).getAttribute("value");
 
             if (!text.equals(currentText)) {
@@ -46,6 +47,12 @@ public class BaseHelper {
     protected void click(By locator) {
         waitForElementVisible(locator);
         driver.findElement(locator).click();
+    }
+
+    protected void clickAndWaitForElementVisible(By locatorForClick, By locatorForWait) {
+        waitForElementVisible(locatorForClick);
+        driver.findElement(locatorForClick).click();
+        waitForElementVisible(locatorForWait);
     }
 
     private void waitForElementVisible(By locator) {
