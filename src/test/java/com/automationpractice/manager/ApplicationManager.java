@@ -16,7 +16,9 @@ public class ApplicationManager {
     private LoginHelper loginHelper;
     private SignInHelper signInHelper;
     private ContactUsHelper contactUsHelper;
+    private MyAccountHelper myAccountHelper;
     private HeaderHelper headerHelper;
+    private HomeHelper homeHelper;
     private int browser;
 
     public ApplicationManager(int browser) {
@@ -35,8 +37,16 @@ public class ApplicationManager {
         return contactUsHelper;
     }
 
+    public MyAccountHelper getMyAccountHelper() {
+        return myAccountHelper;
+    }
+
     public HeaderHelper getHeaderHelper() {
         return headerHelper;
+    }
+
+    public HomeHelper getHomeHelper() {
+        return homeHelper;
     }
 
     public void initBrowser() throws MalformedURLException {
@@ -69,7 +79,9 @@ public class ApplicationManager {
         loginHelper = new LoginHelper(driver, wait);
         signInHelper = new SignInHelper(driver, wait);
         contactUsHelper = new ContactUsHelper(driver, wait);
+        myAccountHelper = new MyAccountHelper(driver, wait);
         headerHelper = new HeaderHelper(driver, wait);
+        homeHelper = new HomeHelper(driver, wait);
     }
 
     public void tearDownBrowser() {

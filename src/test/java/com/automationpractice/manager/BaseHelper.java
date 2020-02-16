@@ -55,7 +55,11 @@ public class BaseHelper {
         waitForElementVisible(locatorForWait);
     }
 
-    private void waitForElementVisible(By locator) {
+    protected void waitForElementVisible(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public String getTextOfElementOnPage(By element) {
+        return driver.findElement(element).getText();
     }
 }

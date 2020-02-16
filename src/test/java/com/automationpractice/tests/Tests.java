@@ -3,6 +3,7 @@ package com.automationpractice.tests;
 import org.junit.Assert;
 import org.junit.Test;
 import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
 
 public class Tests extends BaseTest {
     @Test
@@ -26,9 +27,10 @@ public class Tests extends BaseTest {
 
         app.getHeaderHelper().goToSignInPage();
         app.getSignInHelper().loggingInAsUser(login, password);
-//        Assert.assertEquals("", "", "");
+        Assert.assertEquals("SHOULD BE EXPECTED TEXT", "MY ACCOUNT", app.getMyAccountHelper().getTextOfElementOnPage(By.xpath("//div[@id = 'center_column']//h1")));
 
-//        app.getMyAccountHelper().loggingOutOfUser();
+        app.getMyAccountHelper().loggingOutOfUser();
+        Assert.assertEquals("SHOULD BE EXPECTED TEXT", "AUTHENTICATION", app.getLoginHelper().getTextOfElementOnPage(By.xpath("//div[@id = 'center_column']//h1")));
     }
 
     @Test
