@@ -7,8 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HeaderHelper extends BaseHelper {
-    public HeaderHelper(WebDriver driver, WebDriverWait wait, Faker faker) {
-        super(driver, wait, faker);
+    public HeaderHelper(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
     }
 
     public void goToSignInPage() {

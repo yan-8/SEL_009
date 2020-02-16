@@ -10,14 +10,14 @@ public class LoginHelper extends BaseHelper {
 //    private WebDriverWait wait;
 //    private Faker faker;
 
-    public LoginHelper(WebDriver driver, WebDriverWait wait, Faker faker) {
-        super(driver, wait, faker);
+    public LoginHelper(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
 //        this.wait = wait;
 //        this.faker = faker;
     }
 
-    public void fillGeneratedEmailForCreateNewUser() {
-        String email = faker.lorem().characters(10) + "@test.com";
+    public void fillGeneratedEmailForCreateNewUser(String email) {
+        email = email + "@test.com";
         type(By.xpath("//*[@id = 'email_create']"), email);
     }
 

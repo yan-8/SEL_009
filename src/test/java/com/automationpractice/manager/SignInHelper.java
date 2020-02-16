@@ -9,16 +9,16 @@ public class SignInHelper extends BaseHelper {
 //    private WebDriverWait wait;
 //    private Faker faker;
 
-    public SignInHelper(WebDriver driver, WebDriverWait wait, Faker faker) {
-        super(driver, wait, faker);
+    public SignInHelper(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
 //        this.wait = wait;
 //        this.faker = faker;
     }
 
-    public void fillUserDataToSignUp() {
-        String firstName = faker.name().firstName();
-        String lastName = faker.name().lastName();
-        String password = faker.lorem().characters(8, true);
+    public void fillUserDataToSignUp(String firstName, String lastName, String password) {
+//        String firstName = faker.name().firstName();
+//        String lastName = faker.name().lastName();
+//        String password = faker.lorem().characters(8, true);
 
         click(By.xpath("//*[@id = 'uniform-id_gender2']"));
         type(By.xpath("//*[@id = 'customer_firstname']"), firstName);
@@ -28,9 +28,5 @@ public class SignInHelper extends BaseHelper {
         selectFromDropdownByValue(By.xpath("//select[@name = 'days']"), "1");
         selectFromDropdownByValue(By.xpath("//select[@name = 'months']"), "1");
         selectFromDropdownByValue(By.xpath("//select[@name = 'years']"), "1970");
-
-
-
-
     }
 }

@@ -14,7 +14,7 @@ import java.net.URL;
 public class ApplicationManager {
     private WebDriver driver;
     private WebDriverWait wait;
-    private Faker faker;
+//    private Faker faker;
     private LoginHelper loginHelper;
     private SignInHelper signInHelper;
     private HeaderHelper headerHelper;
@@ -40,7 +40,7 @@ public class ApplicationManager {
         if (browser == BrowserType.DEFAULT) {
 
             // temp remote driver init
-            URL remoteServerURL = new URL("http://192.168.55.104:4444/wd/hub");
+            URL remoteServerURL = new URL("http://192.168.55.102:4444/wd/hub");
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setBrowserName("chrome");
             driver = new RemoteWebDriver(remoteServerURL, capabilities); // запуск с ChromeOptions
@@ -60,13 +60,13 @@ public class ApplicationManager {
 
         wait = new WebDriverWait(driver, 15); // явное
         driver.manage().window().maximize();
-        faker = new Faker();
+//        faker = new Faker();
 
         driver.get("http://automationpractice.com");
 
-        loginHelper = new LoginHelper(driver, wait, faker);
-        signInHelper = new SignInHelper(driver, wait, faker);
-        headerHelper = new HeaderHelper(driver, wait, faker);
+        loginHelper = new LoginHelper(driver, wait);
+        signInHelper = new SignInHelper(driver, wait);
+        headerHelper = new HeaderHelper(driver, wait);
     }
 
     public void tearDownBrowser() {

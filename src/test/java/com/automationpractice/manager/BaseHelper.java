@@ -11,12 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BaseHelper {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected Faker faker;
+//    protected Faker faker;
 
-    public BaseHelper(WebDriver driver, WebDriverWait wait, Faker faker) {
+    public BaseHelper(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
-        this.faker = faker;
+//        this.faker = faker;
     }
 
     protected void type(By locator, String text) {
