@@ -5,6 +5,8 @@ import org.junit.Test;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 
+import java.util.List;
+
 public class Tests extends BaseTest {
     @Test
     public void registrationNewUser() {
@@ -37,5 +39,12 @@ public class Tests extends BaseTest {
     public void amountOfButtonsOnContactUsPage() {
         app.getHeaderHelper().goToContactUsPage();
         Assert.assertEquals("SHOULD BE 1 BUTTON ON FORM", 1, app.getContactUsHelper().getAmountOfButtonsOnForm());
+    }
+
+    @Test
+    public void listOfItemsInNavigationMenu() {
+        List<String> amoutOfMenu = app.getHomeHelper().getListOfElements();
+        System.out.println(amoutOfMenu); // [WOMEN, DRESSES, T-SHIRTS] https://prnt.sc/r49ncl
+        Assert.assertEquals("SHOULD BE 3 ITEMS IN MENU", 3, amoutOfMenu.size());
     }
 }

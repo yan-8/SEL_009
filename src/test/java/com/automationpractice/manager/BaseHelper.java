@@ -3,9 +3,13 @@ package com.automationpractice.manager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BaseHelper {
     protected WebDriver driver;
@@ -61,5 +65,18 @@ public class BaseHelper {
 
     public String getTextOfElementOnPage(By element) {
         return driver.findElement(element).getText();
+    }
+
+    public List<String> getListOfElements() {
+        List<String> words = new ArrayList<String>();
+        List<WebElement> elements = driver.findElements(By.xpath("//ul[@class = 'sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li"));
+
+        for (WebElement element : elements) {
+//            String name = element.getText();
+//            String myWords = name;
+//            words.add(myWords);
+            words.add(element.getText());
+        }
+        return words;
     }
 }
