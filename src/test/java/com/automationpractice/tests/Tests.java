@@ -1,10 +1,11 @@
 package com.automationpractice.tests;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import org.junit.Test;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
-
 import java.util.List;
 
 public class Tests extends BaseTest {
@@ -45,6 +46,8 @@ public class Tests extends BaseTest {
     public void listOfItemsInNavigationMenu() {
         List<String> amoutOfMenu = app.getHomeHelper().getListOfElements();
         System.out.println(amoutOfMenu); // [WOMEN, DRESSES, T-SHIRTS] https://prnt.sc/r49ncl
-        Assert.assertEquals("SHOULD BE 3 ITEMS IN MENU", 3, amoutOfMenu.size());
+//        Assert.assertEquals("SHOULD BE 3 ITEMS IN MENU", 3, amoutOfMenu.size());
+        MatcherAssert.assertThat(3, CoreMatchers.equalTo(amoutOfMenu.size()));
     }
 }
+// watched 52

@@ -53,7 +53,7 @@ public class ApplicationManager {
         if (browser == BrowserType.DEFAULT) {
 
             // temp remote driver init
-            URL remoteServerURL = new URL("http://192.168.55.102:4444/wd/hub");
+            URL remoteServerURL = new URL("http://192.168.55.104:4444/wd/hub");
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setBrowserName("chrome");
             driver = new RemoteWebDriver(remoteServerURL, capabilities); // запуск с ChromeOptions
