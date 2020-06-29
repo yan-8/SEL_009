@@ -50,4 +50,4 @@ public class Tests extends BaseTest {
         MatcherAssert.assertThat(3, CoreMatchers.equalTo(amoutOfMenu.size()));
     }
 }
-// watched 52
+// watched 55
